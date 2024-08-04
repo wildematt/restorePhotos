@@ -136,18 +136,18 @@ const Home: NextPage = () => {
           </div>
         </a>
         <h1 className='mx-auto max-w-4xl font-display text-4xl font-bold tracking-normal text-slate-900 sm:text-6xl mb-5'>
-          Restore any face photo
+        AI照片修复神器
         </h1>
         {status === 'authenticated' && data && (
           <p className='text-slate-500'>
-            You have{' '}
+           你还有{' '}
             <span className='font-semibold'>
-              {data.remainingGenerations} generations
+              {data.remainingGenerations} 生成
             </span>{' '}
-            left today. Your generation
-            {Number(data.remainingGenerations) > 1 ? 's' : ''} will renew in{' '}
+            剩余 今日. 你的生成计划
+            {Number(data.remainingGenerations) > 1 ? 's' : ''}更行{' '}
             <span className='font-semibold'>
-              {data.hours} hours and {data.minutes} minutes.
+              {data.hours} 小时 / {data.minutes} 分钟.
             </span>
           </p>
         )}
@@ -213,9 +213,9 @@ const Home: NextPage = () => {
           {restoredImage && originalPhoto && !sideBySide && (
             <div className='flex sm:space-x-4 sm:flex-row flex-col'>
               <div>
-                <h2 className='mb-1 font-medium text-lg'>Original Photo</h2>
+                <h2 className='mb-1 font-medium text-lg'>原图</h2>
                 <Image
-                  alt='original photo'
+                  alt='原图'
                   src={originalPhoto}
                   className='rounded-2xl relative'
                   width={475}
@@ -223,10 +223,10 @@ const Home: NextPage = () => {
                 />
               </div>
               <div className='sm:mt-0 mt-8'>
-                <h2 className='mb-1 font-medium text-lg'>Restored Photo</h2>
+                <h2 className='mb-1 font-medium text-lg'>优化后图片</h2>
                 <a href={restoredImage} target='_blank' rel='noreferrer'>
                   <Image
-                    alt='restored photo'
+                    alt='优化后图片'
                     src={restoredImage}
                     className='rounded-2xl relative sm:mt-0 mt-2 cursor-zoom-in'
                     width={475}
@@ -269,9 +269,9 @@ const Home: NextPage = () => {
                   setRestoredLoaded(false);
                   setError(null);
                 }}
-                className='bg-black rounded-full text-white font-medium px-4 py-2 mt-8 hover:bg-black/80 transition'
+                className='bg-green-600 rounded-full text-white font-medium px-4 py-2 mt-8 hover:bg-green-600/80 transition'
               >
-                Upload New Photo
+                上传新图片
               </button>
             )}
             {restoredLoaded && (
@@ -279,9 +279,9 @@ const Home: NextPage = () => {
                 onClick={() => {
                   downloadPhoto(restoredImage!, appendNewToName(photoName!));
                 }}
-                className='bg-white rounded-full text-black border font-medium px-4 py-2 mt-8 hover:bg-gray-100 transition'
+                className='bg-white rounded-full text-green-600  border font-medium px-4 py-2 mt-8 hover:bg-gray-100 transition'
               >
-                Download Restored Photo
+                下载优化后图片
               </button>
             )}
           </div>
