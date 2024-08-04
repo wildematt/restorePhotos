@@ -9,8 +9,6 @@ import {
 } from '@bytescale/upload-widget';
 import { UploadDropzone } from '@bytescale/upload-widget-react';
 import { CompareSlider } from '../components/CompareSlider';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
 import LoadingDots from '../components/LoadingDots';
 import Toggle from '../components/Toggle';
 import appendNewToName from '../utils/appendNewToName';
@@ -115,7 +113,7 @@ const Home: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <Header photo={session?.user?.image || undefined} />
+
       <main className='flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-4 sm:mb-0 mb-8'>
         <a
           className='border shadow-xl flex max-w-md rounded-xl mb-6 hover:scale-[1.02] transition duration-300 ease-in-out'
@@ -289,7 +287,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </main>
-      <Footer />
+
     </div>
   );
 };
